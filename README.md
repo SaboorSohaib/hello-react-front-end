@@ -68,7 +68,7 @@
 <!-- LIVE DEMO -->
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Rails Application [git@github.com:SaboorSohaib/hello-rails-back-end.git]
+- <a href="https://github.com/SaboorSohaib/hello-rails-back-end" target="_blank">Rails Application </a>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
