@@ -6,7 +6,7 @@ import Greeting from './components/greeting';
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" component={ Greeting } />
+      <Route exact path="/" component={Greeting} />
     </div>
   );
 }
