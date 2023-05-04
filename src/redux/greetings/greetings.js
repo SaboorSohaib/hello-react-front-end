@@ -1,42 +1,34 @@
-const SHOW_GREETING = 'greetings/greetings/SHOW_MESSAGE';
+import { configureStore } from '@reduxjs/toolkit';
+
+const SHOW_MESSAGE = 'SHOW_MESSAGE';
 const LINK = 'http://127.0.0.1:3000/api/greeting';
 
-const initialState = {
-  greeting: '',
-};
+export function Data(payload) {
+  return {
+    type: SHOW_MESSAGE,
+    payload,
+  };
+}
 
-export default function greetReducer(state = initialState, action) {
+export default function Greet(state = [], action = {}) {
   switch (action.type) {
-    case SHOW_GREETING:
-      return {
-        ...state,
-        greeting: action.payload.greeting_text,
-      };
-
+    case SHOW_MESSAGE:
+      return [
+        action.payload,
+      ];
     default:
       return state;
   }
 }
 
-const setGreetings = (greetingObj) => ({
-  type: SHOW_GREETING,
-  payload: greetingObj,
-});
-
-const showGreeting = () => async (dispatch) => {
-  await fetch(LINK, {
-    method: 'get',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((result) => result.json())
-    .then((res) => {
-      const msg = {
-        greeting_text: res.greeting_text,
-      };
-      dispatch(setGreetings(msg));
+export const fetchData = () => async (dispatch) => {
+  let greeting = [];
+  await fetch(LINK)
+    .then((response) => response.json())
+    .then((data) => {
+      greeting = data.greeting;
     });
+  dispatch(Data(greeting));
 };
 
-export { showGreeting, setGreetings };
+export const store = configureStore({ reducer: { greeting: Greet } });
