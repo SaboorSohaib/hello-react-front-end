@@ -61,7 +61,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- We can see random greeitngs.
+- We can see random greetings.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
