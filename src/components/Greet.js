@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-function Greeting() {
+const Greeting = () => {
   const greetings = useSelector((state) => state.greeting);
   return (
     <div>
@@ -10,6 +10,6 @@ function Greeting() {
       </h2>
     </div>
   );
-}
+};
 
 export default Greeting;
