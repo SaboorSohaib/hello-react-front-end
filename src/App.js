@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { fetchData } from './redux/greetings/greetings';
 import Greeting from './components/Greet';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchData());
@@ -16,6 +16,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
